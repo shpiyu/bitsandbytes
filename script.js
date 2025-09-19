@@ -1,6 +1,14 @@
 // Blog post configuration
 const blogPosts = [
     {
+        title: "About",
+        date: "2024-01-01",
+        file: "posts/about.md",
+        slug: "about",
+        excerpt: "Learn more about this blog and what you can expect to find here.",
+        isAbout: true // Special flag to identify about post
+    },
+    {
         title: "Welcome to Bits and Bytes",
         date: "2024-01-15",
         file: "posts/welcome.md",
@@ -79,7 +87,10 @@ async function loadBlogPosts() {
     const container = document.getElementById('blog-posts');
     if (!container) return;
 
-    for (const post of blogPosts) {
+    // Filter out the about post from home page listing
+    const regularPosts = blogPosts.filter(post => !post.isAbout);
+
+    for (const post of regularPosts) {
         const postElement = document.createElement('article');
         postElement.className = 'blog-post';
         

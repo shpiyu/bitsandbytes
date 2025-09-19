@@ -9,7 +9,7 @@ const BLOG_CONFIG = {
     // Navigation items
     navigation: [
         { name: "Home", href: "index.html", id: "home" },
-        { name: "About", href: "about.html", id: "about" }
+        { name: "About", href: "post.html?post=about", id: "about" }
     ],
     
     // About page content
@@ -48,13 +48,19 @@ function populateNavigation(currentPage = '') {
     
     navList.innerHTML = '';
     
+    // Check if we're on the about post page
+    const urlParams = new URLSearchParams(window.location.search);
+    const postSlug = urlParams.get('post');
+    const isAboutPost = postSlug === 'about';
+    
     BLOG_CONFIG.navigation.forEach(item => {
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = item.href;
         a.textContent = item.name;
         
-        if (currentPage === item.id) {
+        // Set active state
+        if (currentPage === item.id || (item.id === 'about' && isAboutPost)) {
             a.classList.add('active');
         }
         
