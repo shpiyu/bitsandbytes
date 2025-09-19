@@ -1,22 +1,5 @@
-// Blog post configuration
-const blogPosts = [
-    {
-        title: "About",
-        date: "2025-09-20",
-        file: "posts/about.md",
-        slug: "about",
-        excerpt: "Learn more about this blog and what you can expect to find here.",
-        hideOnHomePage: true // Special flag to identify about post
-    },
-    {
-        title: "Welcome to Bits and Bytes",
-        date: "2025-01-15",
-        file: "posts/welcome.md",
-        slug: "welcome-to-bits-and-bytes",
-        excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together.",
-        // image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    }
-];
+// Import blog posts
+import { blogPosts } from './blogPosts.js';
 
 // Function to load and parse markdown content
 async function loadMarkdown(file) {

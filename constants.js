@@ -1,7 +1,7 @@
 // Blog configuration constants
 const BLOG_CONFIG = {
     title: "Bits and Bytes",
-    subtitle: "Exploring the digital world, one byte at a time",
+    subtitle: "A collection of my thoughts",
     email: "piyushranjan95@gmail.com",
     author: "Piyush Ranjan",
     baseUrl: "https://shpiyu.github.io/bitsandbytes/",
@@ -87,6 +87,4 @@ function initializePage(currentPage = '', pageTitle = '') {
 }
 
 // Export for use in other files
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { BLOG_CONFIG, initializePage };
-}
+export { BLOG_CONFIG, initializePage };

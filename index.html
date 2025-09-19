@@ -36,9 +36,9 @@
         </div>
     </footer>
 
-    <script src="constants.js"></script>
-    <script src="script.js"></script>
-    <script>
+    <script type="module" src="script.js"></script>
+    <script type="module">
+        import { initializePage } from './constants.js';
         // Initialize page with constants
         document.addEventListener('DOMContentLoaded', function() {
             initializePage('home');

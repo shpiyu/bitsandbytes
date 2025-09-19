@@ -1,3 +1,6 @@
+import { blogPosts } from './blogPosts.js';
+import { initializePage, BLOG_CONFIG } from './constants.js';
+
 // Enhanced markdown to HTML converter
 function markdownToHtml(markdown) {
     if (!markdown) return '';
@@ -116,12 +119,5 @@ async function loadBlogPost() {
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function () {
     initializePage('', 'Blog Post');
-
-    // Set back to home link
-    const backLink = document.getElementById('back-to-home-link');
-    if (backLink) {
-        backLink.href = BLOG_CONFIG.navigation[0].href;
-    }
-
     loadBlogPost();
 });

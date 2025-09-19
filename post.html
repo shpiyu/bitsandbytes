@@ -46,8 +46,12 @@
         </div>
     </footer>
 
-    <script src="constants.js"></script>
-    <script src="post.js"></script>
+    <script type="module" src="post.js"></script>
+    <script type="module">
+        // Import and initialize page with constants
+        import { initializePage } from './constants.js';
+        document.addEventListener('DOMContentLoaded', () => initializePage(''));
+    </script>
 </body>
 
 </html>
