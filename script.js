@@ -2,7 +2,7 @@
 const blogPosts = [
     {
         title: "About",
-        date: "2024-01-01",
+        date: "2025-09-20",
         file: "posts/about.md",
         slug: "about",
         excerpt: "Learn more about this blog and what you can expect to find here.",
@@ -14,14 +14,7 @@ const blogPosts = [
         file: "posts/welcome.md",
         slug: "welcome-to-bits-and-bytes",
         excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    },
-    {
-        title: "Getting Started with JavaScript",
-        date: "2024-01-10", 
-        file: "posts/javascript-basics.md",
-        slug: "getting-started-with-javascript",
-        excerpt: "A beginner's guide to JavaScript fundamentals, covering variables, functions, and basic programming concepts."
+        // image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
     }
 ];
 
