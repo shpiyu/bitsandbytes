@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Bits and Bytes</title>
+    <title id="page-title">About - Bits and Bytes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div>
-                <h1><a href="index.html">Bits and Bytes</a></h1>
-                <p class="subtitle">Exploring the digital world, one byte at a time</p>
+                <h1><a href="index.html" id="header-title">Bits and Bytes</a></h1>
+                <p class="subtitle" id="header-subtitle">Exploring the digital world, one byte at a time</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <!-- Navigation will be populated by constants.js -->
                 </ul>
             </nav>
         </div>
@@ -25,7 +24,7 @@
     <main class="container">
         <div class="about-content">
             <h2>About</h2>
-            <p>Welcome to Bits and Bytes! This is a space where I share my thoughts and discoveries.</p>
+            <p><!-- Content will be populated by constants.js --></p>
         </div>
     </main>
 
@@ -33,9 +32,17 @@
         <div class="container">
             <div class="contact">
                 <h3>Contact</h3>
-                <p>Email: <a href="mailto:piyushranjan95@gmail.com">piyushranjan95@gmail.com</a></p>
+                <p>Email: <a href="mailto:placeholder@example.com" id="contact-email">placeholder@example.com</a></p>
             </div>
         </div>
     </footer>
+
+    <script src="constants.js"></script>
+    <script>
+        // Initialize page with constants
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage('about', 'About');
+        });
+    </script>
 </body>
 </html>

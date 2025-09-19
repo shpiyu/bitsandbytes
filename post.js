@@ -194,14 +194,14 @@ function loadBlogPost() {
     const htmlContent = markdownToHtml(markdownContent);
     
     // Update page title
-    document.getElementById('page-title').textContent = `${post.title} - Bits and Bytes`;
+    document.getElementById('page-title').textContent = `${post.title} - ${BLOG_CONFIG.title}`;
     
     // Display content
     contentEl.innerHTML = `
         <div class="meta">Published on ${new Date(post.date).toLocaleDateString()}</div>
         <div class="content">${htmlContent}</div>
         <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
-            <a href="index.html">← Back to Home</a>
+            <a href="${BLOG_CONFIG.navigation[0].href}">← Back to Home</a>
         </div>
     `;
     
@@ -210,4 +210,14 @@ function loadBlogPost() {
 }
 
 // Initialize when page loads
-document.addEventListener('DOMContentLoaded', loadBlogPost);
+document.addEventListener('DOMContentLoaded', function() {
+    initializePage('', 'Blog Post');
+    
+    // Set back to home link
+    const backLink = document.getElementById('back-to-home-link');
+    if (backLink) {
+        backLink.href = BLOG_CONFIG.navigation[0].href;
+    }
+    
+    loadBlogPost();
+});
