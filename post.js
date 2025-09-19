@@ -1,33 +1,3 @@
-// Blog post configuration (same as in script.js)
-const blogPosts = [
-    {
-        title: "About",
-        date: "2025-09-20",
-        file: "posts/about.md",
-        slug: "about",
-        excerpt: "Learn more about this blog and what you can expect to find here.",
-        isAbout: true // Special flag to identify about post
-    },
-    {
-        title: "Welcome to Bits and Bytes",
-        date: "2025-09-20",
-        file: "posts/welcome.md",
-        slug: "welcome-to-bits-and-bytes",
-        excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together.",
-        // image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
-    }
-];
-
-// Convert title to URL-safe slug
-function titleToSlug(title) {
-    return title
-        .toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
-        .trim('-'); // Remove leading/trailing hyphens
-}
-
 // Enhanced markdown to HTML converter
 function markdownToHtml(markdown) {
     if (!markdown) return '';

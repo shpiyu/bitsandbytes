@@ -6,11 +6,11 @@ const blogPosts = [
         file: "posts/about.md",
         slug: "about",
         excerpt: "Learn more about this blog and what you can expect to find here.",
-        isAbout: true // Special flag to identify about post
+        hideOnHomePage: true // Special flag to identify about post
     },
     {
         title: "Welcome to Bits and Bytes",
-        date: "2024-01-15",
+        date: "2025-01-15",
         file: "posts/welcome.md",
         slug: "welcome-to-bits-and-bytes",
         excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together.",
@@ -80,8 +80,8 @@ async function loadBlogPosts() {
     const container = document.getElementById('blog-posts');
     if (!container) return;
 
-    // Filter out the about post from home page listing
-    const regularPosts = blogPosts.filter(post => !post.isAbout);
+    // Filter out pages that shouldn't be on home page
+    const regularPosts = blogPosts.filter(post => !post.hideOnHomePage);
 
     for (const post of regularPosts) {
         const postElement = document.createElement('article');
