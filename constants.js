@@ -78,25 +78,12 @@ function populateFooter() {
     }
 }
 
-// Function to populate about content
-function populateAboutContent() {
-    const aboutText = document.querySelector('.about-content p');
-    if (aboutText) {
-        aboutText.textContent = BLOG_CONFIG.aboutContent;
-    }
-}
-
 // Initialize page with constants
 function initializePage(currentPage = '', pageTitle = '') {
     updatePageTitle(pageTitle);
     populateHeader();
     populateNavigation(currentPage);
     populateFooter();
-    
-    // Page-specific initialization
-    if (currentPage === 'about') {
-        populateAboutContent();
-    }
 }
 
 // Export for use in other files
