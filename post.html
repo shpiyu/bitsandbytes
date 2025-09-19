@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Blog Post - Bits and Bytes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Bits and Bytes</h1>
+            <p class="subtitle">Exploring the digital world, one byte at a time</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="loading">Loading post...</div>
+        <div id="error" style="display: none;">
+            <div class="blog-post-full">
+                <h1>Post Not Found</h1>
+                <p>Sorry, the blog post you're looking for doesn't exist.</p>
+                <p><a href="index.html">← Back to Home</a></p>
+            </div>
+        </div>
+        <article id="blog-post-content" class="blog-post-full" style="display: none;">
+            <!-- Content will be loaded here -->
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="contact">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:[email]@example.com">[email]@example.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="post.js"></script>
+</body>
+</html>

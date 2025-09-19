@@ -4,12 +4,15 @@ const blogPosts = [
         title: "Welcome to Bits and Bytes",
         date: "2024-01-15",
         file: "posts/welcome.md",
-        excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together."
+        slug: "welcome-to-bits-and-bytes",
+        excerpt: "Welcome to my new blog! Here's what you can expect to find as we explore the fascinating world of technology together.",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop"
     },
     {
         title: "Getting Started with JavaScript",
         date: "2024-01-10", 
         file: "posts/javascript-basics.md",
+        slug: "getting-started-with-javascript",
         excerpt: "A beginner's guide to JavaScript fundamentals, covering variables, functions, and basic programming concepts."
     }
 ];
@@ -77,18 +80,14 @@ async function loadBlogPosts() {
     if (!container) return;
 
     for (const post of blogPosts) {
-        const markdown = await loadMarkdown(post.file);
-        const firstImage = extractFirstImage(markdown);
-        const excerpt = markdown ? createExcerpt(markdown) : post.excerpt;
-
         const postElement = document.createElement('article');
         postElement.className = 'blog-post';
         
         postElement.innerHTML = `
-            <h2>${post.title}</h2>
+            <h2><a href="post.html?post=${post.slug}">${post.title}</a></h2>
             <div class="meta">Published on ${new Date(post.date).toLocaleDateString()}</div>
-            ${firstImage ? `<img src="${firstImage}" alt="Blog post image" />` : ''}
-            <div class="excerpt">${excerpt}</div>
+            ${post.image ? `<img src="${post.image}" alt="Blog post image" />` : ''}
+            <div class="excerpt">${post.excerpt}</div>
         `;
         
         container.appendChild(postElement);
